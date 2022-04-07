@@ -6,7 +6,7 @@ const getSelectValue = () => {
 const getDateValue = () => {
     let dateValue = document.getElementById('list2date').value
     let dateInput = new Date(dateValue)
-    return dateInput.toDateString()
+    return dateInput
 }
 
 const getSelectValue3 = () => {
@@ -24,9 +24,11 @@ const cmForm = document.getElementById('cm-form')
 cmForm.addEventListener('submit', (e) => {
     e.preventDefault()
     console.log('Form has been submitted!')
-    console.log(getSelectValue());
+    console.log(getSelectValue())
     console.log(getDateValue())
+    console.log(getSelectValue3())
+    console.log(getSelectValue4())
     // console.log(getSelectValue3())
-    filterCar(getSelectValue(), getDateValue())
+    filterCar(getSelectValue(), getDateValue(), getSelectValue3(), getSelectValue4())
 })
 

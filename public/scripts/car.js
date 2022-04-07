@@ -56,9 +56,15 @@ const getAllCar = () => {
 
 getAllCar()
 
-const filterCar = (avail, tanggal) => {
-    let newCar = AllCar.filter(car =>
-        car.available.toString() == avail
+const filterCar = (avail, tanggal, waktu, kapasitas) => {
+    let newCar = AllCar.filter(car => {
+        console.log(new Date(car.availableAt, new Date(waktu), '=========='))
+        // console.log(new Date(car.availableAt).getHours()),
+        car.available.toString() == avail &&
+            new Date(car.availableAt) < new Date(tanggal) &&
+            new Date(car.availableAt).getHours() < waktu &&
+            car.capacity == kapasitas
+    }
     );
     const body = document.getElementById('cm-cards')
     body.innerHTML = ''
@@ -88,7 +94,7 @@ const filterCar = (avail, tanggal) => {
                         <img class="cm-icon" src="./images/cm-icon/fi_settings.png">
                     </div>
                     <div class="col">
-                        <p>${data.transmission}</p>
+                        <p>${data.availableAt}</p>
                     </div>
                 </div>      
 
