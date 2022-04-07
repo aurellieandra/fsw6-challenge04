@@ -64,7 +64,7 @@ const filterCar = (avail, tanggal, waktu, kapasitas) => {
         // return new Date(car.availableAt).getHours() > waktu
         car.available.toString() == avail &&
         new Date(car.availableAt) < new Date(tanggal) &&
-        new Date(car.availableAt).getHours() >= waktu &&
+        new Date(car.availableAt).getHours() >= waktu ||
         car.capacity == kapasitas
     );
     const body = document.getElementById('cm-cards')
