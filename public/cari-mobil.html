@@ -85,42 +85,42 @@
     <!-- Cari Mobil -->
     <div class="container-fluid" id="cari-mobil">
         <div class="container card" id="cm-search">
-            <form method="GET" action=".">
+            <form id="cm-form">
                 <div class="row">
                     <div class="col">
                         <p>Tipe Driver</p>
                         <div class="input-group mb-3">
-                            <select class="form-select" id="inputGroupSelect01">
+                            <select class="form-select" id="list">
                                 <option hidden>Pilih Tipe Driver</option>
-                                <option value="1">Dengan Sopir</option>
-                                <option value="2">Tanpa Sopir (Lepas Kunci)</option>
+                                <option value="true">Dengan Sopir</option>
+                                <option value="false">Tanpa Sopir (Lepas Kunci)</option>
                             </select>
                         </div>
                     </div>
                     <div class="col">
                         <p>Tanggal</p>
-                        <div class="input-group mb-3" id="inputGroupDate02">
+                        <div class="input-group mb-3">
                             <input type="date" class="form-control" placeholder="Pilih Tanggal"
-                                aria-label="Pilih Tangggal">
+                                aria-label="Pilih Tangggal" id="list2date">
                         </div>
                     </div>
                     <div class="col">
                         <p>Waktu Jemput/ Ambil</p>
                         <div class="input-group mb-3">
-                            <select class="form-select" id="inputGroupSelect03">
+                            <select class="form-select" id="list3">
                                 <option hidden>Pilih Waktu</option>
-                                <option value="1">08:00 WIB</option>
-                                <option value="2">09:00 WIB</option>
-                                <option value="3">10:00 WIB</option>
-                                <option value="4">11:00 WIB</option>
-                                <option value="5">12:00 WIB</option>
+                                <option value="8">08:00 WIB</option>
+                                <option value="9">09:00 WIB</option>
+                                <option value="10">10:00 WIB</option>
+                                <option value="11">11:00 WIB</option>
+                                <option value="12">12:00 WIB</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-3">
                         <p>Jumlah Penumpang (Optional)</p>
                         <div class="input-group mb-3">
-                            <select class="form-select" id="inputGroupSelect04">
+                            <select class="form-select" id="list4">
                                 <option hidden>Jumlah Penumpang</option>
                                 <option value="1">1 orang</option>
                                 <option value="2">2 orang</option>
@@ -132,20 +132,16 @@
                         </div>
                     </div>
                     <div class="col-2" style="align-self: center; text-align-last: center;">
-                        <button class="btn btn-success text-white" id="cari-btn">Cari Mobil</button>
+                        <button type="submit" class="btn btn-success text-white">Cari Mobil</button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="container" id="cm-result">
             <div class="row" id="cm-inputs">
-                <input type="text" id="textinput1" name="lname" placeholder="type model">
-                <input type="text" id="textinput2" name="lname" placeholder="type transmission">
-                <button id="buttonSubmit">Submit</button>
+                <!-- <input type="text" id="textinput1" name="lname" placeholder="type model"> -->
             </div>
-            <div class="row" id="cm-cards">
-
-            </div>
+            <div class="row" id="cm-cards"></div>
         </div>
     </div>
 
@@ -193,8 +189,8 @@
 
     <!-- Javascript untuk menampilkan Car -->
     <script type="text/javascript" src="./scripts/car.js"></script>
-    <!-- <script type="text/javascript" src="./scripts/handleInput.js"></script> -->
-    <script type="text/javascript" src="./scripts/filter.js"></script>
+    <script type="text/javascript" src="./scripts/handleInput.js"></script>
+    <script type="text/javascript" src="./scripts/getValue.js"></script>
 </body>
 
 </html>

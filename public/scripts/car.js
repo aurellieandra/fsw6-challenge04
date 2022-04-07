@@ -56,8 +56,10 @@ const getAllCar = () => {
 
 getAllCar()
 
-const filterCar = (model) => {
-    let newCar = AllCar.filter(car => car.model.toLowerCase().includes(model));
+const filterCar = (avail, tanggal) => {
+    let newCar = AllCar.filter(car =>
+        car.available.toString() == avail
+    );
     const body = document.getElementById('cm-cards')
     body.innerHTML = ''
 
