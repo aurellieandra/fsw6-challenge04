@@ -57,14 +57,15 @@ const getAllCar = () => {
 getAllCar()
 
 const filterCar = (avail, tanggal, waktu, kapasitas) => {
-    let newCar = AllCar.filter(car => {
-        console.log(new Date(car.availableAt, new Date(waktu), '=========='))
-        // console.log(new Date(car.availableAt).getHours()),
+    // console.log(new Date('2022-03-23T15:49:05.563Z'))
+    let newCar = AllCar.filter(car =>
+        // {
+        // console.log(new Date(car.availableAt).getHours(), waktu, '==========')
+        // return new Date(car.availableAt).getHours() > waktu
         car.available.toString() == avail &&
-            new Date(car.availableAt) < new Date(tanggal) &&
-            new Date(car.availableAt).getHours() < waktu &&
-            car.capacity == kapasitas
-    }
+        new Date(car.availableAt) < new Date(tanggal) &&
+        new Date(car.availableAt).getHours() >= waktu &&
+        car.capacity == kapasitas
     );
     const body = document.getElementById('cm-cards')
     body.innerHTML = ''
