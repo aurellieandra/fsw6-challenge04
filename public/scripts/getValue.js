@@ -23,12 +23,17 @@ const cmForm = document.getElementById('cm-form')
 
 cmForm.addEventListener('submit', (e) => {
     e.preventDefault()
+
     console.log('Form has been submitted!')
     console.log(getSelectValue())
     console.log(getDateValue())
     console.log(getSelectValue3())
     console.log(getSelectValue4())
-    // console.log(getSelectValue3())
-    filterCar(getSelectValue(), getDateValue(), getSelectValue3(), getSelectValue4())
+
+    if (getSelectValue4() == 'null') {
+        filterCar2(getSelectValue(), getDateValue(), getSelectValue3())
+    } else {
+        filterCar(getSelectValue(), getDateValue(), getSelectValue3(), getSelectValue4())
+    }
 })
 
